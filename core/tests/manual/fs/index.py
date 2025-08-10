@@ -35,7 +35,7 @@ elif not RUNNING_IN_WORKER:
             button.textContent = "unmount"
             button.onclick = unmount
 
-        except:
+        except Exception:
             import js
 
             js.alert("unable to grant access")

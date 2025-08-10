@@ -12,7 +12,7 @@ try:
             kw["dict_converter"] = from_entries
         return _py_tjs(value, **kw)
 
-except:
+except Exception:
     from jsffi import create_proxy as _cp
     from jsffi import to_js as _tjs
     import js
@@ -35,7 +35,7 @@ try:
             _ffi.assign(source, to_js(arg))
         return source
 
-except:
+except Exception:
     import js
 
     _assign = js.Object.assign

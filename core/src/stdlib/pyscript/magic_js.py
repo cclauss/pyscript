@@ -51,7 +51,7 @@ if RUNNING_IN_WORKER:
         js_import = window.Function(
             "return (...urls) => Promise.all(urls.map((url) => import(url)))"
         )()
-    except:
+    except Exception:
         message = "Unable to use `window` or `document` -> https://docs.pyscript.net/latest/faq/#sharedarraybuffer"
         globalThis.console.warn(message)
         window = NotSupported("pyscript.window", message)
